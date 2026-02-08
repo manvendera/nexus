@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus - My Simple Website</title>
+    <!-- Basic Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Simple Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+      .my-blue {
+        background-color: #1e3a8a;
+      }
+      .my-orange {
+        color: #f97316;
+      }
+      .bg-my-orange {
+        background-color: #f97316;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 flex justify-between items-center h-16"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-blue-900 text-white flex items-center justify-center rounded font-bold"
+          >
+            N
+          </div>
+          <span class="text-xl font-bold text-gray-900">Nexus</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html" class="text-orange-500 font-bold">Home</a>
+          <a href="about.html" class="text-gray-600 hover:text-black">About</a>
+          <a href="services.html" class="text-gray-600 hover:text-black"
+            >Services</a
+          >
+          <a href="blog.html" class="text-gray-600 hover:text-black">Blog</a>
+          <a href="contact.html" class="text-gray-600 hover:text-black"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Login/Signup -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-600 hover:text-black">Login</a>
+          <a
+            href="signup.html"
+            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+            >Sign Up</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden" onclick="toggleMenu()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-200 p-4"
+      >
+        <a href="index.html" class="block py-2 text-orange-500 font-bold"
+          >Home</a
+        >
+        <a href="about.html" class="block py-2 text-gray-600">About</a>
+        <a href="services.html" class="block py-2 text-gray-600">Services</a>
+        <a href="blog.html" class="block py-2 text-gray-600">Blog</a>
+        <a href="contact.html" class="block py-2 text-gray-600">Contact</a>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <a href="login.html" class="block py-2 text-gray-600">Login</a>
+          <a href="signup.html" class="block py-2 text-orange-500 font-bold"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Welcome Hero Section -->
+      <section class="bg-blue-900 py-20">
+        <div class="container mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+            Build a Great Website
+          </h1>
+          <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            We help you make amazing digital experiences. We are a team of
+            experts ready to help you grow your business online.
+          </p>
+          <div class="flex justify-center gap-4">
+            <a
+              href="contact.html"
+              class="bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600"
+              >Contact Us</a
+            >
+            <a
+              href="services.html"
+              class="bg-transparent border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900"
+              >Our Services</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Numbers Section -->
+      <section class="bg-white py-12 border-b border-gray-100">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-500">500+</div>
+              <div class="text-gray-600">Happy Clients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-500">98%</div>
+              <div class="text-gray-600">Success Rate</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-500">150+</div>
+              <div class="text-gray-600">Projects Done</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-orange-500">24/7</div>
+              <div class="text-gray-600">Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Use Us Section -->
+      <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900">Why Use Nexus?</h2>
+            <p class="text-gray-600 mt-4">
+              We are the best choice for your next project.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+              <div
+                class="w-12 h-12 bg-blue-100 text-blue-900 flex items-center justify-center rounded mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Very Fast</h3>
+              <p class="text-gray-600">
+                Our websites load really quickly on all devices.
+              </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+              <div
+                class="w-12 h-12 bg-blue-100 text-blue-900 flex items-center justify-center rounded mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Safe and Secure</h3>
+              <p class="text-gray-600">
+                We keep your data safe with the best security.
+              </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+              <div
+                class="w-12 h-12 bg-blue-100 text-blue-900 flex items-center justify-center rounded mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" x2="22" y1="12" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Global Comapny</h3>
+              <p class="text-gray-600">
+                We work with people from all over the world.
+              </p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+              <div
+                class="w-12 h-12 bg-blue-100 text-blue-900 flex items-center justify-center rounded mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Team Work</h3>
+              <p class="text-gray-600">
+                We love working together to help our customers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get Started Section -->
+      <section class="py-20 bg-blue-900 text-white text-center">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-6">Want to Start Your Project?</h2>
+          <p class="mb-8 text-blue-100">
+            Contact us today for a free talk about your website.
+          </p>
+          <a
+            href="contact.html"
+            class="bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600"
+            >Contact Us Now</a
+          >
+        </div>
+      </section>
+
+      <!-- Happy Customers Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-16">
+            What Our Customers Say
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Person 1 -->
+            <div class="p-6 bg-gray-50 border border-gray-100 rounded">
+              <p class="text-gray-700 italic mb-6">
+                "Nexus did a great job on my website. It looks very nice and
+                works well."
+              </p>
+              <div class="font-bold">Sarah Johnson</div>
+              <div class="text-sm text-gray-500">CEO, TechStart</div>
+            </div>
+            <!-- Person 2 -->
+            <div class="p-6 bg-gray-50 border border-gray-100 rounded">
+              <p class="text-gray-700 italic mb-6">
+                "They are very professional and fast. I am happy with their
+                work."
+              </p>
+              <div class="font-bold">Michael Chen</div>
+              <div class="text-sm text-gray-500">Founder, GrowthLab</div>
+            </div>
+            <!-- Person 3 -->
+            <div class="p-6 bg-gray-50 border border-gray-100 rounded">
+              <p class="text-gray-700 italic mb-6">
+                "Highly recommended for anyone who needs a good website."
+              </p>
+              <div class="font-bold">Emily Rodriguez</div>
+              <div class="text-sm text-gray-500">Director, Innovate Co</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Trust Section -->
+      <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Why Trust Us?</h2>
+              <p class="text-gray-600 mb-8">
+                We have been making websites for a long time. Here is why people
+                like us:
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-orange-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs"
+                    >✓</span
+                  >
+                  <span>We always finish on time.</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-orange-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs"
+                    >✓</span
+                  >
+                  <span>We talk to you every day.</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="bg-orange-500 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs"
+                    >✓</span
+                  >
+                  <span>We help you after the website is done.</span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-blue-900 p-12 rounded-lg text-center text-white">
+              <div class="text-6xl font-bold text-orange-500 mb-2">10+</div>
+              <div class="text-xl">Years of Work</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <h4 class="text-xl font-bold mb-4">Nexus</h4>
+            <p class="text-blue-200">We make websites for everyone.</p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="text-blue-200 hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-blue-200 hover:text-white"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="text-blue-200 hover:text-white"
+                  >Services</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Our Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-blue-200 hover:text-white"
+                  >Web Design</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-blue-200 hover:text-white"
+                  >App Design</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Contact</h4>
+            <p class="text-blue-200">Email: hello@nexus.com</p>
+            <p class="text-blue-200">Phone: +1 234 567 890</p>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-blue-800 text-center text-sm text-blue-300"
+        >
+          &copy; 2024 Nexus. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Beginner Script -->
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("mobileMenu");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+        } else {
+          menu.classList.add("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
